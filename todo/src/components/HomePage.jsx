@@ -7,7 +7,10 @@ function HomePage() {
   const [input, setInput] = useState("");
   const [placeHolderText,setPlaceHolderText] = useState("Enter Text");
   const [editID,setEditID] = useState("");
-  const [deleteId,setDeleteId] = useState("");
+  const [deleteId,setDeleteId] = useState({
+    id:"",
+    data:""
+  });
   const [div,setDiv] = useState(false);
 
   const list = useSelector((state) => state.list);
@@ -24,7 +27,7 @@ function HomePage() {
 
   function deleteButton(){
 
-    dispatch(deleteTodo(deleteId));
+    dispatch(deleteTodo(deleteId.id));
     setDiv(false);
   }
 
@@ -32,7 +35,7 @@ function HomePage() {
     <>
     <div id="mainDiv" style={{position:"relative"}}>
       {div? <div style={{position:"fixed"} } id="deletePermission">
-        <h3>Do you want to delete?</h3>
+        <h3>Do you want to delete "{deleteId.data}"?</h3>
         <div>
           <button id="deleteYes" onClick={()=>deleteButton()}>Yes</button>
           <button id="deleteNo" onClick={()=>setDiv(false)}>No</button>
@@ -61,7 +64,7 @@ function HomePage() {
             }}></i>
         :
           <i style={{fontSize:"20px"}} className="fa-solid fa-plus"  onClick={() => {
-              dispatch(addTodo(input), setInput(true));
+              dispatch(addTodo(input), setInput(''));
             }}
             ></i>
         }
@@ -80,7 +83,7 @@ function HomePage() {
                 }}>
                 <i id="editButton" className="fa-solid fa-pencil" onClick={()=>{editFun(elem.id,elem.data)}}></i>
                 <i id="deleteButton" className="fa-solid fa-trash-can" onClick={() => {
-                  setDeleteId(elem.id) ; setDiv(true)
+                  setDeleteId({...deleteId,id:elem.id,data:elem.data}) ; setDiv(true)
                 }}></i>
                 </div>
             </div>

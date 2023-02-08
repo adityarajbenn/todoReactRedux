@@ -1,79 +1,99 @@
-#mainDiv{
+#mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid black;
+  background-color: rgb(0, 0, 33);
+}
+#contentDiv {
+  width: 300px;
+  height: 500px;
+}
+.inputDiv {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  border-radius: 3px;
+}
+.inputDiv input {
+  background-color: white;
+  border: none;
+  width: 70%;
+
+  padding: 10px;
+  border-radius: 5px;
+}
+.inputDiv input:focus {
+  outline: none;
+}
+.inputDiv i {
+  color: orange;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#listDiv {
+  margin-top: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  width: inherit;
+}
+#listDiv div {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+  border-radius: 3px;
+  background-color: rgb(77, 26, 185);
+}
+
+#listDiv div:hover {
+  background-color: white;
+  color: black;
+}
+
+#listDiv div div i:hover {
+  cursor: pointer;
+}
+
+#editButton {
+  color: rgb(0, 0, 0);
+}
+#deleteButton {
+  color: red;
+}
+#deletePermission {
+  background-color: white;
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+#deletePermission div{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    border: 1px solid black;
-    background-color: rgb(0, 0, 33)
+    justify-content: space-evenly;
 }
-#contentDiv{
-    width: 300px;
-    height: 500px;
+#deletePermission button {
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
-.inputDiv{
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    align-items: center;
-    border-radius: 3px;
+#deleteYes {
+  background-color: red;
 }
-.inputDiv input{
-    background-color: white;
-    border: none;
-    width: 70%;
-    
-    padding: 10px;
-    border-radius: 5px;
-}
-.inputDiv input:focus{
-    outline: none;
-}
-.inputDiv i{
-    color: orange;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+#deleteNo {
+  background-color: green;
 }
 
-#listDiv{
-    margin-top: 10px;
-    max-height: 500px;
-    overflow-y: auto;
-    width: inherit;
-}
-#listDiv div{
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:0 10px;
-    color: white;
-    border-radius: 3px;
-    background-color: rgb(77, 26, 185);
-}
-
-#listDiv div:hover{
-    background-color: white;
-    color: black;
-}
-
-#listDiv div div i:hover{
-    cursor: pointer;
-}
-
-#editButton{
-    color: rgb(0, 0, 0);
-}
-#deleteButton{
-    color: red;
-}
-#deletePermission{
-    background-color: white;
-}
-#deleteYes:hover{
-    background-color: red;
-}
-#deleteNo:hover{
-    background-color: green;
+#deletePermission button:hover{
+    border: 2px solid black;
 }
